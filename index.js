@@ -31,9 +31,16 @@ function normalizeMiddleName(parts, i, names) {
   return parts;
 }
 
+const splitter = / and | & /i;
+
 function splitName(name) {
+  // Extract the first "and" or &
+  const conjuction = splitter.test(name) && (
+    ' ' + name.match(splitter)[0].trim().toLowerCase() + ' '
+  );
+
   const names = name
-    .split(/ and | & /i)
+    .split(splitter)
     .map(nameCase)
     .map(human.parseName)
     .map(normalizeNameWithTitle)
@@ -41,11 +48,15 @@ function splitName(name) {
   
   // Curly & Moe & Larry
   if (names.length > 2) {
-    return { firstName: '', lastName: name };
+    return {
+      firstName: nameCase(name),
+      lastName: ''
+    };
   }
 
   if (names.length === 2) {
-    let lastName, firstName = names.map(combineFirstName).join(' and ');
+    let firstName = names.map(combineFirstName).join(conjuction);
+    let lastName = '';
 
     // John Smith and Mary Smith
     if (names[0].lastName === names[1].lastName) {
@@ -58,8 +69,8 @@ function splitName(name) {
       lastName = combineLastName(names[0]);
     // John Smith and Jane Doe
     } else {
-      firstName = combineFullName(names[0]);
-      lastName = combineFullName(names[1]);
+      firstName = nameCase(name);
+      lastName = '';
     }
 
     return { firstName, lastName };

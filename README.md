@@ -9,7 +9,7 @@ Split a person's name into first name and last name fields
 * Splits a name into exactly two fields `{ firstName, lastName }`
 * Fixes UPPERCASE, lowercase, iNVERSE CASE, and otherwise FUnkY cAse
 * Handles couples ("John and Jane Doe")
-* Gracefully degrades to put the entire string in `lastName` if it cannot be parsed (such as a company name, or more than two names)
+* Gracefully degrades to put the entire string in `firstName` if there are multiple last names
 
 Based on the awesome [humanparser](https://www.npmjs.com/package/humanparser) and [namecase](https://www.npmjs.com/package/namecase) packages
 
