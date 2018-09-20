@@ -1,0 +1,40 @@
+{
+  "name": "split-human-name",
+  "version": "1.0.0",
+  "description": "Split a person's name into firstName and lastName fields",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/ --reporter list"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compwright/split-human-name.git"
+  },
+  "keywords": [
+    "humanparse",
+    "human",
+    "name",
+    "split",
+    "first-name",
+    "last-name"
+  ],
+  "author": "Jonathon Hill <jhill9693@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/compwright/split-human-name/issues"
+  },
+  "homepage": "https://github.com/compwright/split-human-name#readme",
+  "dependencies": {
+    "@compwright/namecase": "^1.2.0",
+    "humanparser": "^1.8.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "engines": {
+    "node": ">8"
+  }
+}
