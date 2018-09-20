@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/compwright/split-human-name#readme",
   "dependencies": {
-    "@compwright/namecase": "^1.2.0",
-    "humanparser": "^1.8.0"
+    "@compwright/namecase": "^1.2.1",
+    "humanparser": "^1.8.2"
   },
   "devDependencies": {
     "mocha": "^5.2.0"

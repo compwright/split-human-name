@@ -6,18 +6,38 @@ function combineFullName(parts) {
 }
 
 function combineFirstName({ salutation, firstName, middleName }) {
-  return [salutation, firstName, middleName].join(' ').trim();
+  return [salutation, firstName, middleName].filter(s => !!s).join(' ').trim();
 }
 
 function combineLastName({ lastName, suffix }) {
   return lastName + (suffix ? ', ' + suffix : '');
 }
 
+function normalizeNameWithTitle(parts, i, names) {
+  // { salutation: 'Dr', lastName: 'John' } => { salutation: 'Dr', firstName: 'John' }
+  if (!parts.firstName && parts.lastName && i === 0 && names.length > 1) {
+    parts.firstName = parts.lastName;
+    delete parts.lastName;
+  }
+  return parts;
+}
+
+function normalizeMiddleName(parts, i, names) {
+  // { firstName: 'Danial', lastName: 'P.' } => { firstName: 'Danial', middleName: 'P.' }
+  if (!parts.middleName && (/\b[A-Z]{1}\.?\b/i).test(parts.lastName) && i === 0 && names.length > 1) {
+    parts.middleName = parts.lastName;
+    delete parts.lastName;
+  }
+  return parts;
+}
+
 function splitName(name) {
   const names = name
     .split(/ and | & /i)
     .map(nameCase)
-    .map(human.parseName);
+    .map(human.parseName)
+    .map(normalizeNameWithTitle)
+    .map(normalizeMiddleName);
   
   // Curly & Moe & Larry
   if (names.length > 2) {
