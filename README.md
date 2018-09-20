@@ -1,6 +1,6 @@
 # split-human-name
 
-[![Build Status](https://travis-ci.org/compwright/split-human-name.svg?branch=master)](https://travis-ci.org/compwright/split-human-name)
+[![Build Status](https://travis-ci.org/compwright/split-human-name.svg?branch=master)](https://travis-ci.org/compwright/split-human-name) [![Greenkeeper badge](https://badges.greenkeeper.io/compwright/split-human-name.svg)](https://greenkeeper.io/)
 
 Split a person's name into first name and last name fields
 
