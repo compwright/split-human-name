@@ -1,6 +1,6 @@
 {
   "name": "split-human-name",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Split a person's name into firstName and lastName fields",
   "main": "index.js",
   "directories": {
