@@ -13,6 +13,8 @@ Split a person's name into first name and last name fields
 
 Based on the awesome [humanparser](https://www.npmjs.com/package/humanparser) and [namecase](https://www.npmjs.com/package/namecase) packages
 
+Online demo: http://compwright.com/demos/split-human-name
+
 ## Requirements
 
 * Node.js 8+
