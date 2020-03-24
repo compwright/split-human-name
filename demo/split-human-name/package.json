@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "csv-stringify": "^5.3.3",
-    "split-human-name": "^1.0.4"
+    "split-human-name": "^1.0.5"
   },
   "devDependencies": {
     "serverless": "^1.51.0",
