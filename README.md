@@ -25,7 +25,18 @@ Online demo: http://compwright.com/demos/split-human-name
 $ npm install --save split-human-name
 ```
 
-## Usage
+## Usage Examples
+
+### Browser
+
+```html
+<script src="https://unpkg.com/split-human-name@latest/dist/split-human-name.min.js"></script>
+<script>
+  console.log(window.splitHumanName('John and Jane Doe'));
+</script>
+```
+
+### Node
 
 ```javascript
 const splitName = require('split-human-name');
