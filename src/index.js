@@ -1,19 +1,19 @@
 const nameCase = require('@compwright/namecase');
 const human = require('humanparser');
 
-function combineFullName(parts) {
+function combineFullName (parts) {
   return (combineFirstName(parts) + ' ' + combineLastName(parts)).trim();
 }
 
-function combineFirstName({ salutation, firstName, middleName }) {
+function combineFirstName ({ salutation, firstName, middleName }) {
   return [salutation, firstName, middleName].filter(s => !!s).join(' ').trim();
 }
 
-function combineLastName({ lastName, suffix }) {
+function combineLastName ({ lastName, suffix }) {
   return lastName + (suffix ? ', ' + suffix : '');
 }
 
-function normalizeNameWithTitle(parts, i, names) {
+function normalizeNameWithTitle (parts, i, names) {
   // { salutation: 'Dr', lastName: 'John' } => { salutation: 'Dr', firstName: 'John' }
   if (!parts.firstName && parts.lastName && i === 0 && names.length > 1) {
     parts.firstName = parts.lastName;
@@ -22,7 +22,7 @@ function normalizeNameWithTitle(parts, i, names) {
   return parts;
 }
 
-function normalizeMiddleName(parts, i, names) {
+function normalizeMiddleName (parts, i, names) {
   // { firstName: 'Danial', lastName: 'P.' } => { firstName: 'Danial', middleName: 'P.' }
   if (!parts.middleName && (/\b[A-Z]{1}\.?\b/i).test(parts.lastName) && i === 0 && names.length > 1) {
     parts.middleName = parts.lastName;
@@ -33,7 +33,7 @@ function normalizeMiddleName(parts, i, names) {
 
 const splitter = / and | & /i;
 
-function splitName(name) {
+function splitName (name) {
   // Extract the first "and" or &
   const conjuction = splitter.test(name) && (
     ' ' + name.match(splitter)[0].trim().toLowerCase() + ' '
@@ -42,10 +42,10 @@ function splitName(name) {
   const names = name
     .split(splitter)
     .map(nameCase)
-    .map(human.parseName)
+    .map(name => human.parseName(name))
     .map(normalizeNameWithTitle)
     .map(normalizeMiddleName);
-  
+
   // Curly & Moe & Larry
   if (names.length > 2) {
     return {
