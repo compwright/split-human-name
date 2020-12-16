@@ -17,7 +17,7 @@ Online demo: http://compwright.com/demos/split-human-name
 
 ## Requirements
 
-* Node.js 8+
+* Node.js 10+
 
 ## Installation
 
