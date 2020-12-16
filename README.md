@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/compwright/split-human-name.svg?branch=master)](https://travis-ci.org/compwright/split-human-name)
 [![Dependency Status](https://img.shields.io/david/compwright/split-human-name.svg?style=flat-square)](https://david-dm.org/compwright/split-human-name)
 [![Download Status](https://img.shields.io/npm/dm/split-human-name.svg?style=flat-square)](https://www.npmjs.com/package/split-human-name)
-
+[![Sponsor on GitHub](https://img.shields.io/static/v1?label=Sponsor&message=❤&logo=GitHub&link=https://github.com/sponsors/compwright)](https://github.com/sponsors/compwright)
 
 Split a person's name into first name and last name fields
 
