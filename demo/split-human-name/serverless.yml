@@ -1,17 +1,15 @@
 service: "split-human-name"
 provider:
   name: google
-  runtime: nodejs8
+  runtime: nodejs12
   region: us-central1
   project: demos-220218
   credentials: ~/.gcloud/demos.json
 plugins:
   - serverless-google-cloudfunctions
 package:
-  exclude:
-    - node_modules/**
-    - .gitignore
-    - .git/**
+  patterns:
+    - index.js
 functions:
   demo:
     handler: "split-human-name"

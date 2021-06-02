@@ -1,19 +1,19 @@
 {
   "name": "split-human-name-demo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Serverless API to demo split-human-name",
   "main": "index.js",
   "author": "Jonathon Hill <jonathon@compwright.com>",
   "license": "MIT",
   "engines": {
-    "node": ">8"
+    "node": ">12"
   },
   "dependencies": {
     "csv-stringify": "^5.3.3",
-    "split-human-name": "^1.0.5"
+    "split-human-name": "^2.0.5"
   },
   "devDependencies": {
-    "serverless": "^1.51.0",
-    "serverless-google-cloudfunctions": "^2.3.3"
+    "serverless": "^2.43.1",
+    "serverless-google-cloudfunctions": "^4.0.0"
   }
 }
