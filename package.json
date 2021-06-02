@@ -28,28 +28,34 @@
     "humanparser": "^2.6.0"
   },
   "devDependencies": {
-    "mocha": "^8.4.0",
-    "parcel-bundler": "^1.12.4",
-    "semistandard": "^16.0.0"
+    "jest": "^27.0.3",
+    "parcel": "^2.0.0-beta.3.1",
+    "semistandard": "*"
   },
-  "main": "src/",
-  "directories": {
-    "test": "test"
-  },
-  "files": [
-    "src",
-    "dist/split-human-name.*"
-  ],
+  "main": "./src",
+  "browser": "dist/split-human-name.min.js",
   "scripts": {
-    "lint": "semistandard --fix",
-    "pretest": "npm run lint",
-    "test": "mocha test",
-    "prebuild": "npm test",
-    "build": "parcel build src/index.js --out-file split-human-name.min.js --target browser --no-cache --global splitHumanName"
+    "pretest": "semistandard --fix",
+    "test": "jest"
   },
   "semistandard": {
     "ignore": [
       "dist"
     ]
+  },
+  "targets": {
+    "main": false,
+    "browser": {
+      "context": "browser",
+      "engines": {
+        "browsers": [
+          "> 0.25%",
+          "not dead"
+        ]
+      },
+      "includeNodeModules": true,
+      "optimize": true,
+      "outputFormat": "global"
+    }
   }
 }
