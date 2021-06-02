@@ -1,6 +1,6 @@
 {
   "name": "split-human-name",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Split a person's name into firstName and lastName fields",
   "repository": {
     "type": "git",
