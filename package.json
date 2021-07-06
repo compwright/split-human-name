@@ -54,8 +54,7 @@
         ]
       },
       "includeNodeModules": true,
-      "optimize": true,
-      "outputFormat": "global"
+      "optimize": true
     }
   }
 }
