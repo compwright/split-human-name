@@ -28,8 +28,8 @@
     "humanparser": "^2.6.0"
   },
   "devDependencies": {
-    "jest": "^27.4.7",
-    "parcel": "^2.2.1",
+    "jest": "*",
+    "parcel": "*",
     "semistandard": "*"
   },
   "main": "./src",
