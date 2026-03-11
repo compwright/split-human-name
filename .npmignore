@@ -1,6 +1,6 @@
 .github
 .parcel-cache
 demo
-tests
-.travis.yml
+test
 Makefile
+resources

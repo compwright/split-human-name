@@ -1,7 +1,5 @@
 # split-human-name
 
-[![Build Status](https://travis-ci.org/compwright/split-human-name.svg?branch=master)](https://travis-ci.org/compwright/split-human-name)
-[![Dependency Status](https://img.shields.io/david/compwright/split-human-name.svg?style=flat-square)](https://david-dm.org/compwright/split-human-name)
 [![Download Status](https://img.shields.io/npm/dm/split-human-name.svg?style=flat-square)](https://www.npmjs.com/package/split-human-name)
 [![Sponsor on GitHub](https://img.shields.io/static/v1?label=Sponsor&message=❤&logo=GitHub&link=https://github.com/sponsors/compwright)](https://github.com/sponsors/compwright)
 
@@ -20,7 +18,9 @@ Online demo: http://compwright.com/demos/split-human-name
 
 ## Requirements
 
-* Node.js 10+
+As of v4, this is an ESM-only package with named imports.
+
+* Node.js 24+
 
 ## Installation
 
@@ -30,19 +30,8 @@ $ npm install --save split-human-name
 
 ## Usage Examples
 
-### Browser
-
-```html
-<script src="https://unpkg.com/split-human-name@latest/dist/split-human-name.min.js"></script>
-<script>
-  console.log(window.splitHumanName('John and Jane Doe'));
-</script>
-```
-
-### Node
-
 ```javascript
-const splitName = require('split-human-name');
+import { splitName } from 'split-human-name';
 const { firstName, lastName } = splitName('John and Jane Doe');
 assert.strictEquals(firstName, 'John and Jane');
 assert.strictEquals(lastName, 'Doe');

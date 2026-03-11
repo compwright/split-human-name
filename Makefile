@@ -1,7 +1,10 @@
-clean:
-	rm -Rf ./dist
+.DEFAULT_GOAL := test
 
-build: clean
-	npx parcel build ./src/browser.js
+lint:
+	yarn standard --fix
 
-.DEFAULT_GOAL := build
+test: lint
+	NODE_OPTIONS=--experimental-vm-modules yarn jest
+
+release:
+	yarn standard-version

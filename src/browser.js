@@ -1,1 +1,0 @@
-global.splitName = require('./index');

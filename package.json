@@ -21,40 +21,22 @@
   },
   "homepage": "https://github.com/compwright/split-human-name#readme",
   "engines": {
-    "node": ">=10"
+    "node": ">=24"
   },
+  "type": "module",
   "dependencies": {
-    "@compwright/namecase": "^2.0.6",
-    "humanparser": "^2.6.0"
+    "@compwright/namecase": "^3.0.1",
+    "humanparser": "^2.7.0"
   },
   "devDependencies": {
-    "jest": "*",
-    "parcel": "*",
-    "semistandard": "*"
+    "jest": "latest",
+    "standard": "latest",
+    "standard-version": "latest"
   },
   "main": "./src",
-  "browser": "dist/split-human-name.min.js",
-  "scripts": {
-    "pretest": "semistandard --fix",
-    "test": "jest"
-  },
-  "semistandard": {
-    "ignore": [
-      "dist"
+  "standard": {
+    "env": [
+      "jest"
     ]
-  },
-  "targets": {
-    "main": false,
-    "browser": {
-      "context": "browser",
-      "engines": {
-        "browsers": [
-          "> 0.25%",
-          "not dead"
-        ]
-      },
-      "includeNodeModules": true,
-      "optimize": true
-    }
   }
 }
