@@ -18,7 +18,7 @@ Online demo: http://compwright.com/demos/split-human-name
 
 ## Requirements
 
-As of v4, this is an ESM-only package with named imports.
+As of v3, this is an ESM-only package with named imports.
 
 * Node.js 24+
 
